@@ -17,7 +17,8 @@
 }
 
 .create-form label{
+  color: steelblue;
   font-family: sans-serif;
   font-size: 12px;
-  color: steelblue;
+  
 }
