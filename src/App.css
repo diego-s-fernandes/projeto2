@@ -22,3 +22,22 @@
   font-size: 12px;
   
 }
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.navbar-link{
+  display: flex;
+  justify-content: space-evenly;
+  word-spacing: 10px;
+
+}
+
+.link{
+  text-decoration: none;
+  font-size: large;
+  margin-left: 10px;
+}

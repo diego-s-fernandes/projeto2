@@ -1,18 +1,32 @@
 import { Button, Checkbox, Form } from 'semantic-ui-react';
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 function Create() {
-
+    
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
+    const [email, setEmail] = useState(false);
+    const [occupation, setOccupation] = useState(false);
+    const [phonenumber, setPhoneNumber] = useState(false);
+
+
     const postData = () => {
-        axios.post(`https://6376494781a568fc25fad6f7.mockapi.io/projetoironhack`, {
+        axios.post(`https://6376494781a568fc25fad6f7.mockapi.io/crudironhack`, {
             firstName,
             lastName,
-            checkbox
+            checkbox,
+            email,
+            occupation,
+            phonenumber
+        }).then(() => {
+            navigate('/read')
         })
     }
  
@@ -22,16 +36,28 @@ function Create() {
          <Form className="create-form">
         <Form.Field>
             <label>First Name</label>
-            <input placeholder='Nome' onChange={(e) => setFirstName(e.target.value)} />
+            <input placeholder='First Name' onChange={(e) => setFirstName(e.target.value)} />
         </Form.Field>
         <Form.Field>
             <label>Last Name</label>
-            <input placeholder='Sobrenome' onChange={(e) => setLastName(e.target.value)}/>
+            <input placeholder='Last Name' onChange={(e) => setLastName(e.target.value)}/>
         </Form.Field>
         <Form.Field>
-            <Checkbox label='Concordo com a utilização das informações'  onChange={(e) => setCheckbox(!checkbox)} />
+            <label>Email</label>
+            <input placeholder='Email' onChange={(e) => setEmail(e.target.value)}/>
         </Form.Field>
-        <Button onClick={postData} type='submit'>Submiter</Button>
+        <Form.Field>
+            <label>Occupation</label>
+            <input placeholder='Occupation' onChange={(e) => setOccupation(e.target.value)}/>
+        </Form.Field>
+        <Form.Field>
+            <label>Phone Number</label>
+            <input placeholder='Phone Number' onChange={(e) => setPhoneNumber(e.target.value)}/>
+        </Form.Field>
+        <Form.Field>
+            <Checkbox label= 'I agree to the Terms and Conditions'  onChange={(e) => setCheckbox(!checkbox)} />
+        </Form.Field>
+        <Button onClick={postData} type='submit'>Submit</Button>
     </Form>
    
     </div>
