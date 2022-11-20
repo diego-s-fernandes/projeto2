@@ -78,7 +78,7 @@ function Read() {
                                 <Table.Cell>{data.checkbox ? 'Checked' : 'Unchecked'}</Table.Cell>
                                 <Link to="/update">
                                 <Table.Cell>
-                                    <Button color="green" onClick={() => setData(data)}> Update </Button>
+                                    <Button color="blue" onClick={() => setData(data)}> Update </Button>
                                 </Table.Cell>
                                 </Link>
                                 

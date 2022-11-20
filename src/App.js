@@ -6,17 +6,19 @@ import Update from './components/Update';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom'
 import NavBar from './components/NavBar';
+import NavBar2 from './components/NavBar2';
 
 
 
 function App() {
   
   return (
-    <div>
-    
+
+    <div>          
     <Router>
+    <NavBar2/>
       <div className="main">
-        <NavBar/>
+        
         <h2 className="main-header">Registration of Service Providers</h2>
         <div>
         <Routes>
