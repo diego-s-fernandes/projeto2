@@ -37,6 +37,8 @@ const updateAPIData = () => {
 	}).then(() => {
       navigate('/read')
     })
+
+
 }
 
     return(
