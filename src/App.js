@@ -6,7 +6,7 @@ import Update from './components/Update';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom'
 import NavBar2 from './components/NavBar2';
-import Detail from './components/Detail';
+
 
 
 
@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Create />} />
           <Route exact path='/read' element={<Read />} />
-          <Route path='/read:id' element={<Detail/>} />
+          <Route path='/read:id' element={<Read />} />
           <Route path='/update' element={<Update />} />
           </Routes>
         </div>

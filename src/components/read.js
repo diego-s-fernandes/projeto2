@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'semantic-ui-react'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 
@@ -11,6 +11,7 @@ function Read() {
     
      
     const [APIData, setAPIData] = useState([]);
+    
 
     useEffect(() => {
         axios.get(`https://6376494781a568fc25fad6f7.mockapi.io/crudironhack`)
@@ -37,7 +38,8 @@ function Read() {
                 })
         }
 
-
+let{id} = useParams()
+     
 
    const onDelete = (id) => {
     axios.delete(`https://6376494781a568fc25fad6f7.mockapi.io/crudironhack/${id}`)
@@ -62,6 +64,7 @@ function Read() {
                         <Table.HeaderCell>Check Box Value</Table.HeaderCell>
                         <Table.HeaderCell>Update</Table.HeaderCell>
                         <Table.HeaderCell>Delete</Table.HeaderCell>
+                        <Table.HeaderCell>Details</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -85,9 +88,15 @@ function Read() {
                                 <Table.Cell>
                                     <Link>
                                     <Button color="red" onClick={() => onDelete(data.id)} > Delete </Button>
-                                    </Link>
-                                    
+                                    </Link>                                    
                                 </Table.Cell>
+                                <Table.Cell>
+                                    <Link>
+                                    <Button to={`/read/${id}`}> View more </Button>
+                                    </Link>                                    
+                                </Table.Cell>
+
+
                             </Table.Row>
                         )
                     })}
