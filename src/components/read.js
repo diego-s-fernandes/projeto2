@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'semantic-ui-react'
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 
@@ -30,6 +30,8 @@ function Read() {
         localStorage.setItem('Phone Number', phonenumber);
         localStorage.setItem('Checkbox Value', checkbox)}
 
+      
+
         const getData = () => {
 
             axios.get(`https://6376494781a568fc25fad6f7.mockapi.io/crudironhack`)
@@ -38,7 +40,6 @@ function Read() {
                 })
         }
 
-let{id} = useParams()
      
 
    const onDelete = (id) => {
@@ -91,8 +92,8 @@ let{id} = useParams()
                                     </Link>                                    
                                 </Table.Cell>
                                 <Table.Cell>
-                                    <Link>
-                                    <Button to={`/read/${id}`}> View more </Button>
+                                    <Link to={`/read/${data.id}`}>
+                                    <Button > View more </Button>
                                     </Link>                                    
                                 </Table.Cell>
 
