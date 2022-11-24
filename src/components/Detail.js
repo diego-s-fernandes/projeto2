@@ -33,7 +33,7 @@ const Detail = () => {
         <div>
           {
             <div>
-            <h3>{user.fistName}</h3>
+            <h2>{user.fistName}</h2>
               <h3>{user.lastName}</h3>
               <h3>{user.email}</h3>
               <h3>{user.occupation}</h3>
