@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function Create() {
+function CreateFormPage() {
     
     const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
@@ -64,4 +64,4 @@ function Create() {
     );
 }
 
-export default Create
+export default CreateFormPage
