@@ -4,7 +4,7 @@ import { Button, Checkbox, Form } from 'semantic-ui-react';
 import { useNavigate } from 'react-router-dom';
 
 
-function Update() {
+function UpdatePage() {
     const navigate = useNavigate();
     const [id, setID] = useState(null);
     const [firstName, setFirstName] = useState('');
@@ -74,4 +74,4 @@ const updateAPIData = () => {
 }
 
 
-export default Update
+export default UpdatePage
