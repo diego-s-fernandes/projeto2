@@ -7,7 +7,7 @@ import { Link} from 'react-router-dom';
 
 
 
-function Read() {
+function ReadPage() {
     
      
     const [APIData, setAPIData] = useState([]);
@@ -109,4 +109,4 @@ function Read() {
                 
 
 
-export default Read
+export default ReadPage
